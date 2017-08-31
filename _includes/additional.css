@@ -1,0 +1,62 @@
+html{
+  position: relative;
+  min-height: 100%;
+}
+body{
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-bottom: 100px;
+}
+.navbar-inverse .navbar-nav .nav-link:hover{
+  color: #FFCD00;
+}
+.navbar-inverse .navbar-brand {
+  color: #FFCD00;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 65px;
+}
+footer .container {
+  border-top: 1px solid #e8e8e8;
+  padding: 20px;
+}
+pre {
+  color: inherit;
+  margin-bottom: 0;
+}
+div.codeblock {
+  margin-bottom: 16px;
+  font-family: Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  width:90%;
+}
+div.left-prompt {
+  background-color: #292b2c;
+  color: #fff;
+  width: 1.5rem;
+  padding: 16px 0px 16px 16px;
+  border-radius: .4rem 0 0 .4rem;
+  font-size: 90%;
+}
+div.right-prompt {
+  background-color: #292b2c;
+  color: #fff;
+  width: 100%;
+  padding: 16px;
+  border-radius: 0 .4rem .4rem 0;
+}
+div.left-file {
+  background-color: #FFCD00;
+  color: #000;
+  padding: 16px;
+  border-radius: .4rem 0 0 .4rem;
+  font-size: 90%;
+  white-space: nowrap;
+}
+div.right-file {
+  padding: 16px;
+  background-color: #f1efec;
+  border-radius: 0 .4rem .4rem 0;
+  width: 100%;
+}

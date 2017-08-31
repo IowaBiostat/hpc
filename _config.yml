@@ -1,0 +1,19 @@
+# Site settings
+title: "Neon HPC Tutorial"
+url: "http://IowaBiostat.github.io/hpc-tutorial"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+exclude: [Makefile]
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Defaults
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
