@@ -33,4 +33,4 @@ We can now run all 10 simulations with a single command:
 
 This will create files `sim1.RData` through `sim10.RData`; we can then combine these results to obtain 100,000 replications of our simulation.  The same idea extends to, say, analyzing several data sets `data1.RData` through `data200.RData`, where the `id` variable may be referred to at several points in the code.  FYI: the `./` in front of batch-sim tells the machine to look in the current directory for the executable command (otherwise the system only looks in the folders specified by the `$PATH` environment variable).
 
-I should note that it is possible to write and run shell scripts ("batch files") in Windows, although that isn't going to help you with the cluster -- Neon runs Linux.
+I should note that it is possible to write and run shell scripts ("batch files") in Windows, although that isn't going to help you with the cluster -- the UI HPC cluster runs Linux.
