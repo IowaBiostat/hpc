@@ -20,6 +20,6 @@ The HPC administrators maintain [their own documentation](https://wiki.uiowa.edu
 
 Biostatistics students who would like access to the cluster require a faculty sponsor.  To request access, [apply for a Argon account](http://hpc.uiowa.edu/user-services/apply-account) and fill out the Argon access agreement with your information.  Under "Investor Group", check the box for BIOSTAT.
 
-The Argon machines themselves are physically located in a facility in Coralville; here's a picture of what they look like:
+The Argon cluster is heterogeneous, meaning that it consists of many different types of machines, and is continuously changing, so I can't offer exact numbers in terms of machines, processors, etc.  In fact, parts of Argon are physically located in two different cities (Iowa City and Coralville).  Here's a picture of what they look like:
 
-<img class="img-fluid mx-auto d-block" src="img/neon.jpg">
+<img class="img-fluid mx-auto d-block" src="img/argon.jpg">
