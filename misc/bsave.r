@@ -1,13 +1,11 @@
-#' Save and combine (gather) results from batched R sessions
+#' Save results from batched R sessions
 #'
-#' `Bsave()` is run from R; its companion function is to be run through the command line via `gather`, which is located in `Dropbox/bin`.
-#'
+#' `Bsave()` is run from R; its companion function, `gather` is meant to be run through the command line.
+#' 
 #' @param res      Results to save
 #' @param suffix   By default, files are named 'tmp1.rds', 'tmp2.rds', and so on.  If `suffix='a'`, then files will be named 'tmp1-a.rds', 'tmp2-a.rds', etc.  `gather` will then save results to '2018-11-07-a.rds'.
 #'
 #' @examples
-#' # These examples are illustrative; for working examples, see Dropbox/bin/test
-#'
 #' A <- rnorm(100)
 #'
 #' # If run interactively

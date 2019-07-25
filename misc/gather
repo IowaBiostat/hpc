@@ -1,0 +1,60 @@
+#!/usr/bin/env Rscript
+suppressMessages(library(docopt))
+"Usage: gather [options]
+
+Options:
+  --suffix=<string>   Suffix used by Bsave(), if applicable
+  -s                  Run in safe mode (don't delete originals)?  Default: FALSE
+  -h                  Show this help screen" -> doc
+opt <- docopt(doc)
+
+# Determine which files to gather
+all.files <- list.files()
+if (is.null(opt$suffix)) {
+  suffix <- ''
+} else {
+  suffix <- paste0('-', opt$suffix)
+}
+pattern <- paste("tmp[[:alnum:]]+", suffix, "\\.rds", sep = "")
+matching.files <- all.files[grep(pattern, all.files)]
+
+# Gather results into res
+res <- NULL
+types <- c("numeric", "character", "array", "matrix")
+if (length(matching.files) == 0) stop('Nothing to gather!')
+for (f in matching.files) {
+  res.f <- readRDS(f)
+  if (class(res.f)[1] == "list") {
+    if (is.null(res)) {
+      res <- res.f
+      names(res) <- names(res.f)
+    } else {
+      rc <- sapply(res.f, class)
+      for (i in 1:length(rc)) {
+        if (rc[i] %in% types) {
+          res[[i]] <- abind::abind(res[[i]], res.f[[i]], along = 1)
+        } else {
+          stop(paste0('Cannot gather results of type ', rc[i]))
+        }
+      }
+    }
+  } else {
+    if (is.null(res)) {
+      res <- res.f
+    } else {
+      if (class(res.f)[1] %in% types) {
+        res <- abind::abind(res, res.f, along = 1)
+      } else {
+        stop(paste0('Cannot gather results of type ', class(res.f)))
+      }
+    }
+  }
+}
+
+# Output and delete old files
+saveRDS(res, file=paste0(Sys.Date(), suffix, ".rds"))
+if (!opt$s) {
+  for (f in matching.files) {
+    file.remove(f)
+  }
+}
