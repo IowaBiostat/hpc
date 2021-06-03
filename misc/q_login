@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [[ $# == 1 ]]; then
+    qlogin -pe smp $1 -q BIOSTAT
+elif [[ $# == 0 ]]; then
+    qlogin -pe smp 1 -q BIOSTAT
+else
+    echo "q_login takes a maximum of 1 argument"
+    exit 1
+fi
