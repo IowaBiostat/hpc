@@ -12,9 +12,9 @@ If you find any errors, outdated links, or bugs, please let one of us (Patrick o
 The structure of the documentation is as follows:
 
 * i-iii: This material covers submission of R jobs in non-interactive ("batch") mode and some basic scripting; it has nothing to do with the Argon cluster per se, but you need to know how to do these things before you can run jobs on the cluster.
-* 1-9: What Argon is and how to use it: the basic commands are covered and illustrated with a step-by-step example of a simulation that you can try out yourself.
-* 10-11: Customizing your HPC setup
-* 12-13: Two examples, one involving a memory-intensive project (genome imputation), the other involving running multiple Markov chains to fit a hierarchical Bayesian model, that illustrate the use of HPC in statistical applications.
+* 1-10: What Argon is and how to use it: the basic commands are covered and illustrated with a step-by-step example of a simulation that you can try out yourself.
+* 11-12: Customizing your HPC setup
+* 13-14: Two examples, one involving a memory-intensive project (genome imputation), the other involving running multiple Markov chains to fit a hierarchical Bayesian model, that illustrate the use of HPC in statistical applications.
 
 The HPC administrators maintain [their own documentation](https://wiki.uiowa.edu/display/hpcdocs/HPC+Documentation+Home), which is also very useful.  One particularly useful resource is their [introduction to HPC for new users](https://wiki.uiowa.edu/display/hpcdocs/Introduction+To+HPC+For+New+Users).
 
