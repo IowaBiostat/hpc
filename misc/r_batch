@@ -1,0 +1,2 @@
+#!/bin/bash
+qsub -cwd -e ~/err -o ~/out -q BIOSTAT -t 1-$2 ~/.local/bin/r_job $1
