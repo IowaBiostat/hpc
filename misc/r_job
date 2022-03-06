@@ -1,2 +1,2 @@
 #!/bin/bash
-R CMD BATCH --no-save --no-restore "--args $SGE_TASK_ID $SGE_TASK_LAST" $1 .$1.Rout
+R CMD BATCH --no-save --no-restore "--args $SGE_TASK_ID $SGE_TASK_LAST" $1 .$1.log

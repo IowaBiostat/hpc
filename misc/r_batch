@@ -1,2 +1,10 @@
 #!/bin/bash
-qsub -cwd -e ~/err -o ~/out -q BIOSTAT -t 1-$2 ~/.local/bin/r_job $1
+
+if [[ $# == 1 ]]; then
+    qsub -cwd -e ~/err -o ~/out -q BIOSTAT -b y ~/.local/bin/r_job $1
+elif [[ $# == 2 ]]; then
+    qsub -cwd -e ~/err -o ~/out -q BIOSTAT -b y -t 1-$2 ~/.local/bin/r_job $1
+else
+    echo "r_batch takes either 1 or 2 arguments"
+    exit 1
+fi
