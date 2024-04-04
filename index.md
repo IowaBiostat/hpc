@@ -16,7 +16,7 @@ The structure of the documentation is as follows:
 * 11-12: Customizing your HPC setup
 * 13-14: Two examples, one involving a memory-intensive project (genome imputation), the other involving running multiple Markov chains to fit a hierarchical Bayesian model, that illustrate the use of HPC in statistical applications.
 
-The HPC administrators maintain [their own documentation](https://wiki.uiowa.edu/display/hpcdocs/HPC+Documentation+Home), which is also very useful.  One particularly useful resource is their [introduction to HPC for new users](https://wiki.uiowa.edu/display/hpcdocs/Introduction+To+HPC+For+New+Users).
+The HPC administrators maintain [their own documentation](https://uiowa.atlassian.net/wiki/spaces/hpcdocs/overview?homepageId=76513285), which is also very useful. One particularly useful resource is their [introduction to HPC for new users](https://uiowa.atlassian.net/wiki/spaces/hpcdocs/pages/76513414/Introduction+To+HPC+For+New+Users). Their documentation goes into far more detail than we will here -- our goal is to provide a simplified tutorial to help new users get up and running with the most common types of statistics tasks.
 
 Biostatistics students who would like access to the cluster require a faculty sponsor.  To request access, [apply for a Argon account](http://hpc.uiowa.edu/user-services/apply-account) and fill out the Argon access agreement with your information.  Under "Investor Group", check the box for BIOSTAT.
 
