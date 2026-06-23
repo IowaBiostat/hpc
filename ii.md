@@ -1,44 +1,46 @@
 ---
 prev: i
-next: iii
+next: 1
 ---
 
-# Passing arguments to R via the command line
+# Shell scripts (Linux/Mac-specific)
 
-We have seen how to run a "static" program -- i.e., one that runs the same way each time.  In the [earlier example](i.html), the code will generate different p-values each time (because it will be run with a different random seed each time), but we can't run multiple versions simultaneously (well, we can, but we would overwrite `sim.RData` each time).
-
-To fix this problem, we need to be able to pass an argument from the command line to R.  This is accomplished via the `--args` option, as in a command like:
-
-{% capture _code %}R CMD BATCH --no-save --no-restore "--args 3" sim.R .sim.Rout{% endcapture %}
-{% include prompt.html code=_code %}
-
-From within `R`, the argument (3) is accessible via the `commandArgs()` function.  So, let us rewrite `sim.R` as follows:
+Now let us write a script that will run 10 such simulations in parallel.  Create a file called `batch-sim` with the following contents:
 
 {% capture _code %}
-N <- 10000
-p <- numeric(N)
-n <- 10
-for (i in 1:N) {
-  x <- rnorm(n)
-  y <- rnorm(n, sd=3)
-  p[i] <- t.test(x, y, var.equal=TRUE)$p.value
-}
-id <- commandArgs(TRUE)
-filename <- paste("sim", id[1], ".RData", sep="")
-save(p, file=filename)
+#!/bin/bash
+for ((i = 1; i <= 10; i++))
+do
+  Rscript sim.R &
+done
+wait
 {% endcapture %}
-{% include file.html name="sim.R" code=_code %}
+{% include file.html name="batch-sim" code=_code %}
 
-Here, the `TRUE` option means that we only want the stuff in the `--args` section and we don't care about the `--no-save` and `--no-restore` options.  Now, we can run
+This is a simple loop that calls `Rscript sim.R` ten times.  One key remark is the `&` at the end of the `Rscript` line: this tells the shell to start the job in the background and immediately move to the next iteration of the loop, so all ten simulations run simultaneously.  The `wait` at the end holds the script open until all background jobs have finished.
 
-{% capture _code %}R CMD BATCH --no-save --no-restore "--args 1" sim.R .sim.Rout{% endcapture %}
+Before we can run the above command, we have to tell Linux that the file is an executable script.  This is accomplished with the `chmod` command:
+
+{% capture _code %}chmod u+x batch-sim{% endcapture %}
 {% include prompt.html code=_code %}
 
-which runs our simulation and saves the resulting p-values in a file called `sim1.RData`; likewise,
+The `u+x` means that we want to give the user (that's us!) permission to e**x**ecute the file.
 
-{% capture _code %}R CMD BATCH --no-save --no-restore "--args 2" sim.R .sim.Rout{% endcapture %}
+We can now run all 10 simulations with a single command:
+
+{% capture _code %}./batch-sim{% endcapture %}
 {% include prompt.html code=_code %}
 
-runs another simulation and saves those results as `sim2.RData`, and so on.
+This will create 10 files like `sim-a3f9bx2k.rds`, `sim-7hq2mn4p.rds`, etc.  To combine them in R (same as on the [previous page](i.html)):
 
-The result of `commandArgs` is a character vector, so if you want to use it for numeric purposes, you have to convert it with `id <- as.numeric(commandArgs(TRUE))`.  Then you could use it to, say, set the simulation seed with `set.seed(id)` or change the simulation settings with `y <- rnorm(n, sd=id)`.
+{% capture _code %}
+files <- list.files(pattern="^sim-.*\\.rds$")
+p <- do.call(c, lapply(files, readRDS))
+{% endcapture %}
+{% include file.html name="combine.R" code=_code %}
+
+FYI: the `./` in front of `batch-sim` tells the shell to look in the current directory for the command (otherwise the system only looks in the folders specified by the `$PATH` environment variable).
+
+<div markdown="1" class="alert alert-danger" role="alert">
+Keep in mind that Windows and Linux have different file endings; [see here for further details](2.html#transferring-files-windows).
+</div>
