@@ -31,7 +31,9 @@ We can now run all 10 simulations with a single command:
 {% capture _code %}./batch-sim{% endcapture %}
 {% include prompt.html code=_code %}
 
-This will create 10 files like `sim-a3f9bx2k.rds`, `sim-7hq2mn4p.rds`, etc.  To combine them in R (same as on the [previous page](i.html)):
+This will create 10 files like `sim-a3f9bx2k.rds`, `sim-7hq2mn4p.rds`, etc. FYI: the `./` in front of `batch-sim` tells the shell to look in the current directory for the command (otherwise the system only looks in the folders specified by the `$PATH` environment variable).
+
+To combine them in R (same as on the [previous page](i.html)):
 
 {% capture _code %}
 files <- list.files(pattern="^sim-.*\\.rds$")
@@ -39,7 +41,6 @@ p <- do.call(c, lapply(files, readRDS))
 {% endcapture %}
 {% include file.html name="combine.R" code=_code %}
 
-FYI: the `./` in front of `batch-sim` tells the shell to look in the current directory for the command (otherwise the system only looks in the folders specified by the `$PATH` environment variable).
 
 <div markdown="1" class="alert alert-danger" role="alert">
 Keep in mind that Windows and Linux have different file endings; [see here for further details](2.html#transferring-files-windows).  If you create `batch-sim` on a Windows machine, make sure your editor saves it with Unix (LF) line endings, or you'll see errors like `bad interpreter: No such file or directory`.  The safest option is to create the file directly on Argon.
