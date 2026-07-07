@@ -9,6 +9,8 @@ This is designed to be a very simple, hands-on tutorial to help people get start
 
 If you find any errors, outdated links, or bugs, please let one of us (Patrick or Grant) know, or even better, [file an issue](https://github.com/IowaBiostat/hpc/issues).
 
+Tip: besides the Previous/Next links in the menu, you can move between pages with <kbd>Ctrl</kbd>+<kbd>&larr;</kbd> and <kbd>Ctrl</kbd>+<kbd>&rarr;</kbd>.
+
 The structure of the documentation is as follows:
 
 * i-iii: This material covers submission of R jobs in non-interactive ("batch") mode and some basic scripting; it has nothing to do with the Argon cluster per se, but you need to know how to do these things before you can run jobs on the cluster.

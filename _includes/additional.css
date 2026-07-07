@@ -6,10 +6,10 @@ body{
   font-family: 'Source Sans Pro', sans-serif;
   margin-bottom: 100px;
 }
-.navbar-inverse .navbar-nav .nav-link:hover{
+.navbar-dark .navbar-nav .nav-link:hover{
   color: #FFCD00;
 }
-.navbar-inverse .navbar-brand {
+.navbar-dark .navbar-brand {
   color: #FFCD00;
 }
 footer {
@@ -27,9 +27,36 @@ pre {
   margin-bottom: 0;
 }
 div.codeblock {
+  position: relative;
   margin-bottom: 16px;
   font-family: Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
   width:90%;
+}
+button.copy-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  border-radius: .3rem;
+  background-color: #33353a;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity .15s ease-in-out, background-color .15s ease-in-out;
+}
+div.codeblock:hover button.copy-button,
+button.copy-button:focus-visible {
+  opacity: 1;
+}
+button.copy-button.copied {
+  background-color: #1f9d55;
 }
 div.left-prompt {
   background-color: #292b2c;

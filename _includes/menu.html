@@ -1,16 +1,16 @@
-<nav class="navbar navbar-inverse bg-inverse navbar-toggleable-md fixed-top">
+<nav class="navbar navbar-dark bg-dark navbar-expand-md fixed-top" data-prev="{{ page.prev }}.html" data-next="{{ page.next }}.html">
   <div class="container">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="index.html">High performance computing tutorial</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="index.html">High performance computing tutorial</a>
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" href="{{ page.prev }}.html">Previous</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Table of contents</a>
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Table of contents</a>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="i.html">i: Rscript</a>
             <a class="dropdown-item" href="ii.html">ii: Shell scripts</a>
@@ -34,13 +34,3 @@
     </div>
   </div>
 </nav>
-<script>
-  document.addEventListener('keydown', function (e) {
-    if (!e.ctrlKey) return;
-    if (e.key === 'ArrowLeft') {
-      window.location.href = '{{ page.prev }}.html';
-    } else if (e.key === 'ArrowRight') {
-      window.location.href = '{{ page.next }}.html';
-    }
-  });
-</script>
