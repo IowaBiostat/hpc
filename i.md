@@ -9,8 +9,7 @@ Before we can submit jobs to the cluster, we first need to go over how to run
 jobs from the command line on our own local machine. Let's say we have the
 following commands in a file called `sim.R`:
 
-<!-- prettier-ignore-start -->
-{% capture _code %}
+```r
 N <- 10000
 p <- numeric(N)
 n <- 10
@@ -26,23 +25,27 @@ results <- data.frame(
   sd_ratio = sd_ratio,
   p = p
 )
-hash <- paste(sample(c(letters, 0:9), 8, replace = TRUE), collapse = "")
+hash <- paste(
+  sample(c(letters, 0:9), 8, replace = TRUE),
+  collapse = ""
+)
 saveRDS(results, paste0("sim-", hash, ".rds"))
-{% endcapture %}
-{% include file.html name="sim.R" code=_code %}
-<!-- prettier-ignore-end -->
+```
+{: .file data-name="sim.R"}
 
 I.e., we generate data from two normal distributions, one of which has a
 variance 9 times larger than the other, but then carry out a t-test in which we
 assume equal variance. This process is repeated 10,000 times. The last two
-lines generate a random 8-character hash (e.g., `a3f9bx2k`) and save the results
-to a file with that hash in its name (e.g., `sim-a3f9bx2k.rds`). This ensures
-that multiple runs don't overwrite each other.
+expressions generate a random 8-character hash (e.g., `a3f9bx2k`) and save the
+results to a file with that hash in its name (e.g., `sim-a3f9bx2k.rds`). This
+ensures that multiple runs don't overwrite each other.
 
 We can run this from the command line using
 
-{% capture _code %}Rscript sim.R{% endcapture %}
-{% include prompt.html code=_code %}
+```bash
+Rscript sim.R
+```
+{: .prompt}
 
 Running it multiple times produces multiple files like `sim-a3f9bx2k.rds`,
 `sim-7hq2mn4p.rds`, and so on.
@@ -50,10 +53,10 @@ Running it multiple times produces multiple files like `sim-a3f9bx2k.rds`,
 To combine them (this will delete the old `sim-*.rds` files in the process and
 create a new `results.rds` file that contains the combined results):
 
-{% capture _code %}
+```r
 files <- list.files(pattern="^sim-.*\\.rds$")
 results <- do.call(rbind, lapply(files, readRDS))
 invisible(file.remove(files))
 saveRDS(results, "results.rds")
-{% endcapture %}
-{% include file.html name="combine.R" code=_code %}
+```
+{: .file data-name="combine.R"}

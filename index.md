@@ -9,7 +9,7 @@ This is designed to be a very simple, hands-on tutorial to help people get start
 
 If you find any errors, outdated links, or bugs, please let one of us (Patrick or Grant) know, or even better, [file an issue](https://github.com/IowaBiostat/hpc/issues).
 
-Tip: besides the Previous/Next links in the menu, you can move between pages with <kbd>Ctrl</kbd>+<kbd>&larr;</kbd> and <kbd>Ctrl</kbd>+<kbd>&rarr;</kbd>.
+Tip: besides the Previous/Next links in the menu, you can move between pages with <code>Ctrl</code>+<svg class="nav-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg> and <code>Ctrl</code>+<svg class="nav-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>.
 
 The structure of the documentation is as follows:
 
@@ -24,4 +24,4 @@ Biostatistics students who would like access to the cluster require a faculty sp
 
 The Argon cluster is heterogeneous, meaning that it consists of many different types of machines, and is continuously changing, so I can't offer exact numbers in terms of machines, processors, etc.  In fact, parts of Argon are physically located in two different cities (Iowa City and Coralville).  Here's a picture of what they look like:
 
-<img class="img-fluid mx-auto d-block" src="img/argon.jpg">
+<img class="img-fluid mx-auto d-block" src="assets/img/argon.jpg">

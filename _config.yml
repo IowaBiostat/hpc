@@ -8,12 +8,11 @@ markdown: kramdown
 exclude: [Makefile]
 kramdown:
   input: GFM
-  syntax_highlighter: rouge
+  syntax_highlighter: none
 
 # Defaults
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
     values:
       layout: "default"

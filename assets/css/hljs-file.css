@@ -1,0 +1,17 @@
+/* highlight.js "GitHub Dark" theme, scoped to .right-file blocks. Colors from
+   https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css */
+.right-file pre.hljs { color: #c9d1d9; overflow-x: auto; }
+.right-file .hljs-doctag, .right-file .hljs-keyword, .right-file .hljs-meta .hljs-keyword, .right-file .hljs-template-tag, .right-file .hljs-template-variable, .right-file .hljs-type, .right-file .hljs-variable.language_ { color: #ff7b72; }
+.right-file .hljs-title, .right-file .hljs-title.class_, .right-file .hljs-title.class_.inherited__, .right-file .hljs-title.function_ { color: #d2a8ff; }
+.right-file .hljs-attr, .right-file .hljs-attribute, .right-file .hljs-literal, .right-file .hljs-meta, .right-file .hljs-number, .right-file .hljs-operator, .right-file .hljs-selector-attr, .right-file .hljs-selector-class, .right-file .hljs-selector-id, .right-file .hljs-variable { color: #79c0ff; }
+.right-file .hljs-meta .hljs-string, .right-file .hljs-regexp, .right-file .hljs-string { color: #a5d6ff; }
+.right-file .hljs-built_in, .right-file .hljs-symbol { color: #ffa657; }
+.right-file .hljs-code, .right-file .hljs-comment, .right-file .hljs-formula { color: #8b949e; }
+.right-file .hljs-name, .right-file .hljs-quote, .right-file .hljs-selector-pseudo, .right-file .hljs-selector-tag { color: #7ee787; }
+.right-file .hljs-subst { color: #c9d1d9; }
+.right-file .hljs-section { color: #1f6feb; font-weight: 700; }
+.right-file .hljs-bullet { color: #f2cc60; }
+.right-file .hljs-emphasis { color: #c9d1d9; font-style: italic; }
+.right-file .hljs-strong { color: #c9d1d9; font-weight: 700; }
+.right-file .hljs-addition { color: #aff5b4; background-color: #033a16; }
+.right-file .hljs-deletion { color: #ffdcd7; background-color: #67060c; }

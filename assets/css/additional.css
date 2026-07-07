@@ -6,11 +6,18 @@ body{
   font-family: 'Source Sans Pro', sans-serif;
   margin-bottom: 100px;
 }
+.main-content {
+  margin-top: 70px;
+}
 .navbar-dark .navbar-nav .nav-link:hover{
   color: #FFCD00;
 }
 .navbar-dark .navbar-brand {
   color: #FFCD00;
+}
+.navbar-nav button.nav-link {
+  background: none;
+  border: 0;
 }
 footer {
   position: absolute;
@@ -25,6 +32,10 @@ footer .container {
 pre {
   color: inherit;
   margin-bottom: 0;
+}
+svg.nav-arrow {
+  vertical-align: -2px;
+  color: var(--bs-code-color);
 }
 div.codeblock {
   position: relative;
@@ -59,7 +70,7 @@ button.copy-button.copied {
   background-color: #1f9d55;
 }
 div.left-prompt {
-  background-color: #292b2c;
+  background-color: #0d1117;
   color: #fff;
   width: 1.5rem;
   padding: 16px 0px 16px 16px;
@@ -67,8 +78,8 @@ div.left-prompt {
   font-size: 90%;
 }
 div.right-prompt {
-  background-color: #292b2c;
-  color: #fff;
+  background-color: #0d1117;
+  color: #c9d1d9;
   width: 100%;
   padding: 16px;
   border-radius: 0 .4rem .4rem 0;
@@ -83,7 +94,8 @@ div.left-file {
 }
 div.right-file {
   padding: 16px;
-  background-color: #f1efec;
+  background-color: #0d1117;
+  color: #c9d1d9;
   border-radius: 0 .4rem .4rem 0;
   width: 100%;
 }

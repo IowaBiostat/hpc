@@ -1,0 +1,17 @@
+/* highlight.js "GitHub Dark" theme, scoped to .right-prompt blocks. Colors from
+   https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css */
+.right-prompt pre.hljs { color: #c9d1d9; overflow-x: auto; }
+.right-prompt .hljs-doctag, .right-prompt .hljs-keyword, .right-prompt .hljs-meta .hljs-keyword, .right-prompt .hljs-template-tag, .right-prompt .hljs-template-variable, .right-prompt .hljs-type, .right-prompt .hljs-variable.language_ { color: #ff7b72; }
+.right-prompt .hljs-title, .right-prompt .hljs-title.class_, .right-prompt .hljs-title.class_.inherited__, .right-prompt .hljs-title.function_ { color: #d2a8ff; }
+.right-prompt .hljs-attr, .right-prompt .hljs-attribute, .right-prompt .hljs-literal, .right-prompt .hljs-meta, .right-prompt .hljs-number, .right-prompt .hljs-operator, .right-prompt .hljs-selector-attr, .right-prompt .hljs-selector-class, .right-prompt .hljs-selector-id, .right-prompt .hljs-variable { color: #79c0ff; }
+.right-prompt .hljs-meta .hljs-string, .right-prompt .hljs-regexp, .right-prompt .hljs-string { color: #a5d6ff; }
+.right-prompt .hljs-built_in, .right-prompt .hljs-symbol { color: #ffa657; }
+.right-prompt .hljs-code, .right-prompt .hljs-comment, .right-prompt .hljs-formula { color: #8b949e; }
+.right-prompt .hljs-name, .right-prompt .hljs-quote, .right-prompt .hljs-selector-pseudo, .right-prompt .hljs-selector-tag { color: #7ee787; }
+.right-prompt .hljs-subst { color: #c9d1d9; }
+.right-prompt .hljs-section { color: #1f6feb; font-weight: 700; }
+.right-prompt .hljs-bullet { color: #f2cc60; }
+.right-prompt .hljs-emphasis { color: #c9d1d9; font-style: italic; }
+.right-prompt .hljs-strong { color: #c9d1d9; font-weight: 700; }
+.right-prompt .hljs-addition { color: #aff5b4; background-color: #033a16; }
+.right-prompt .hljs-deletion { color: #ffdcd7; background-color: #67060c; }
