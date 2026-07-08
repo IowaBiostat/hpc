@@ -45,6 +45,6 @@ We can now run (and combine) all 10 simulations with a single command:
 
 The `./` in front of `batch-sim` tells the shell to look in the current directory for the command (otherwise the system only looks in the folders specified by the `$PATH` environment variable).
 
-<div markdown="1" class="alert alert-danger" role="alert">
-Keep in mind that Windows and Linux have different file endings; [see here for further details](2.html#transferring-files-windows).  If you create `batch-sim` on a Windows machine, make sure your editor saves it with Unix (LF) line endings, or you'll see errors like `bad interpreter: No such file or directory`.  The safest option is to create the file directly on Argon.
+<div markdown="1" class="alert alert-warning" role="alert">
+**Note:** Keep in mind that Windows and Linux have different file endings; [see here for further details](2.html#transferring-files-windows).  If you create `batch-sim` on a Windows machine, make sure your editor saves it with Unix (LF) line endings, or you'll see errors like `bad interpreter: No such file or directory`.  The safest option is to create the file directly on Argon.
 </div>

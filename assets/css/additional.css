@@ -1,34 +1,89 @@
-html{
+:root {
+  color-scheme: dark;
+  --bs-font-monospace:
+    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono",
+    monospace;
+}
+html {
   position: relative;
   min-height: 100%;
 }
-body{
-  font-family: 'Source Sans Pro', sans-serif;
-  margin-bottom: 100px;
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Ubuntu,
+    Cantarell,
+    "Noto Sans",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+  line-height: 1.65;
+  background-color: #0d1117;
+  margin-bottom: 110px;
 }
 .main-content {
-  margin-top: 70px;
+  margin-top: 6rem;
+  max-width: 900px;
 }
-.navbar-dark .navbar-nav .nav-link:hover{
-  color: #FFCD00;
+.navbar > .container,
+footer .container {
+  max-width: 900px;
+}
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #00e7a7;
+}
+
+/* Headings */
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+main > h1:first-child {
+  margin-top: 0;
+}
+
+/* Navbar: a distinct dark-gray surface, one step lighter than the black page */
+.site-navbar {
+  background-color: #161b22 !important;
+  border-bottom: 1px solid #30363d;
+  padding-top: 0.65rem;
+  padding-bottom: 0.65rem;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #ffcd00;
 }
 .navbar-dark .navbar-brand {
-  color: #FFCD00;
+  color: #ffcd00;
 }
 .navbar-nav button.nav-link {
   background: none;
   border: 0;
 }
+
 footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 65px;
+  height: 72px;
 }
 footer .container {
-  border-top: 1px solid #e8e8e8;
+  border-top: 1px solid #30363d;
   padding: 20px;
+  font-size: 0.9rem;
 }
+
 pre {
   color: inherit;
   margin-bottom: 0;
@@ -37,11 +92,25 @@ svg.nav-arrow {
   vertical-align: -2px;
   color: var(--bs-code-color);
 }
+
+/* Content images */
+main img.img-fluid {
+  border: 1px solid #30363d;
+  border-radius: 0.5rem;
+}
+
+/* Code boxes: dark gray, one step lighter than the black page, for contrast.
+   Sized down from body text, matching the convention that code reads denser
+   than prose. */
 div.codeblock {
   position: relative;
   margin-bottom: 16px;
-  font-family: Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-  width:90%;
+  font-family: var(--bs-font-monospace);
+  line-height: 1.5;
+  width: 100%;
+  border: 1px solid #30363d;
+  border-radius: 0.4rem;
+  overflow: hidden;
 }
 button.copy-button {
   position: absolute;
@@ -55,12 +124,14 @@ button.copy-button {
   height: 28px;
   padding: 0;
   border: none;
-  border-radius: .3rem;
-  background-color: #33353a;
+  border-radius: 0.3rem;
+  background-color: #30363d;
   color: #fff;
   cursor: pointer;
   opacity: 0;
-  transition: opacity .15s ease-in-out, background-color .15s ease-in-out;
+  transition:
+    opacity 0.15s ease-in-out,
+    background-color 0.15s ease-in-out;
 }
 div.codeblock:hover button.copy-button,
 button.copy-button:focus-visible {
@@ -70,32 +141,61 @@ button.copy-button.copied {
   background-color: #1f9d55;
 }
 div.left-prompt {
-  background-color: #0d1117;
+  background-color: #161b22;
   color: #fff;
   width: 1.5rem;
   padding: 16px 0px 16px 16px;
-  border-radius: .4rem 0 0 .4rem;
-  font-size: 90%;
 }
 div.right-prompt {
-  background-color: #0d1117;
+  background-color: #161b22;
   color: #c9d1d9;
   width: 100%;
   padding: 16px;
-  border-radius: 0 .4rem .4rem 0;
 }
 div.left-file {
-  background-color: #FFCD00;
+  background-color: #ffcd00;
   color: #000;
   padding: 16px;
-  border-radius: .4rem 0 0 .4rem;
-  font-size: 90%;
   white-space: nowrap;
 }
 div.right-file {
   padding: 16px;
-  background-color: #0d1117;
+  background-color: #161b22;
   color: #c9d1d9;
-  border-radius: 0 .4rem .4rem 0;
   width: 100%;
+}
+
+/* Callouts: left-border style, color-coded by severity, replacing flat Bootstrap fills */
+.alert-danger,
+.alert-warning {
+  --bs-alert-border: 0;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.alert-danger {
+  --bs-alert-bg: rgba(248, 81, 73, 0.08);
+  --bs-alert-color: #c9d1d9;
+  border-left: 4px solid #f85149;
+}
+.alert-warning {
+  --bs-alert-bg: rgba(210, 153, 34, 0.1);
+  --bs-alert-color: #c9d1d9;
+  border-left: 4px solid #d29922;
+}
+.alert-danger b,
+.alert-danger strong {
+  color: #ff7b72;
+}
+.alert-warning b,
+.alert-warning strong {
+  color: #e3b341;
+}
+.alert-danger p:last-child,
+.alert-warning p:last-child {
+  margin-bottom: 0;
+}
+.alert-danger .codeblock,
+.alert-warning .codeblock {
+  margin-top: 0.75rem;
 }
