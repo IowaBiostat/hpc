@@ -25,20 +25,23 @@ results <- data.frame(
   sd_ratio = sd_ratio,
   p = p
 )
-hash <- paste(
-  sample(c(letters, 0:9), 8, replace = TRUE),
-  collapse = ""
-)
+hash <- sample(c(letters, 0:9), 8, replace = TRUE) |>
+  paste(collapse = "")
+R.version.string
 saveRDS(results, paste0("sim-", hash, ".rds"))
 ```
 {: .file data-name="sim.R"}
 
-I.e., we generate data from two normal distributions, one of which has a
-variance 9 times larger than the other, but then carry out a t-test in which we
-assume equal variance. This process is repeated 10,000 times. The last two
-expressions generate a random 8-character hash (e.g., `a3f9bx2k`) and save the
-results to a file with that hash in its name (e.g., `sim-a3f9bx2k.rds`). This
-ensures that multiple runs don't overwrite each other.
+This generates data from two normal distributions, one of which has a variance 9
+times larger than the other, then carries out a t-test in which we assume equal
+variance. This process is repeated 10,000 times. The `hash` expression generates
+a random 8-character code (e.g., `a3f9bx2k`) so that when we save the result,
+the output will have a unique name (e.g., `sim-a3f9bx2k.rds`). This lets us run
+the script multiple times without each run overwriting the other.
+
+The line where we print `R.version.string` isn't important to the functioning of
+the simulation, but it will be an educational message for us to track during
+this tutorial.
 
 We can run this from the command line using
 
