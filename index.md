@@ -1,6 +1,6 @@
 ---
 prev: index
-next: i
+next: 0
 ---
 
 Welcome to this tutorial on using high-performance computing (HPC) resources at the University of Iowa. This tutorial is specifically designed for students and faculty in the Biostatistics department at the University of Iowa and makes references to the all-purpose Biostatistics node, BIOSTAT. However, other individuals at Iowa or even other institutions may also find it helpful so long as they pay attention to where commands would have to be modified for their particular setup.
