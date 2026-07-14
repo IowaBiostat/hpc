@@ -31,6 +31,17 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  var python = hljs.getLanguage("python");
+  if (python) {
+    // "all" and "input" are stock Python builtins, but in the Snakefile
+    // example they only ever appear as the rule name "all" and the "input:"
+    // directive, not as function calls -- so highlighting them is misleading
+    // (no other rule names or directives like "output"/"script" get colored).
+    python.keywords.built_in = python.keywords.built_in.filter(function (w) {
+      return w !== "all" && w !== "input";
+    });
+  }
+
   document
     .querySelectorAll("div.codeblock pre[data-lang]")
     .forEach(function (pre) {
