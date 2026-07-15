@@ -13,7 +13,13 @@ results <- data.frame(
   sd_ratio = sd_ratio,
   p = p
 )
-hash <- sample(c(letters, 0:9), 8, replace = TRUE) |>
-  paste(collapse = "")
 R.version.string
-saveRDS(results, paste0("sim-", hash, ".rds"))
+args <- commandArgs(trailingOnly = TRUE)
+outfile <- if (length(args) >= 1) {
+  args[1]
+} else {
+  hash <- sample(c(letters, 0:9), 8, replace = TRUE) |>
+    paste(collapse = "")
+  paste0("sim-", hash, ".rds")
+}
+saveRDS(results, outfile)
