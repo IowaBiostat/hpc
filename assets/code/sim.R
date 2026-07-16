@@ -14,6 +14,8 @@ results <- data.frame(
   p = p
 )
 R.version.string
+
+# Save results
 args <- commandArgs(trailingOnly = TRUE)
 outfile <- if (length(args) >= 1) {
   args[1]

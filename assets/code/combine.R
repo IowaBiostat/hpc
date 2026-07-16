@@ -8,4 +8,4 @@ if (length(args) >= 1) {
 }
 results <- do.call(rbind, lapply(files, readRDS))
 saveRDS(results, outfile)
-if (length(args) == 0) invisible(file.remove(files))
+invisible(file.remove(files))
