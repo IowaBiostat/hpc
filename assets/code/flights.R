@@ -3,7 +3,7 @@ rstan_options(auto_write = TRUE)
 options(mc.cores = parallel::detectCores())
 
 # Data
-Data <- read.delim("https://iowabiostat.github.io/hpc/misc/flights.txt")
+Data <- read.delim("https://iowabiostat.github.io/hpc/assets/code/flights.txt")
 Data$Scenario <- factor(Data$Scenario)
 Data$Group <- factor(Data$Group)
 stanData <- list(sid = as.numeric(Data$Scenario),

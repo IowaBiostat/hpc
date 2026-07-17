@@ -15,7 +15,8 @@ The structure of the documentation is as follows:
 
 - **0:** This is a preliminary page on running R jobs in non-interactive mode ("scripts"). It has nothing to do with the Argon cluster per se, but you need to know how to do this before you can run jobs on the cluster.
 - **1-8:** What Argon is and how to use it: the basic commands are covered and illustrated with step-by-step examples that you can try out yourself.
-- **9-11:** More complex HPC situations (containers, MCMC, using Snakemake for complex builds)
+- **9:** An FAQ covering cluster-specific quirks and usage policy questions.
+- **10-12:** More complex HPC situations (containers, MCMC, using Snakemake for complex builds)
 
 The HPC administrators maintain [their own documentation](https://uiowa.atlassian.net/wiki/spaces/hpcdocs/overview?homepageId=76513285), which is also very useful. One particularly useful resource is their [introduction to HPC for new users](https://uiowa.atlassian.net/wiki/spaces/hpcdocs/pages/76513414/Introduction+To+HPC+For+New+Users). Their documentation goes into far more detail than we will here -- our goal is to provide a simplified tutorial to help new users get up and running with the most common types of statistics tasks.
 
