@@ -20,7 +20,7 @@ The structure of the documentation is as follows:
 
 The HPC administrators maintain [their own documentation](https://uiowa.atlassian.net/wiki/spaces/hpcdocs/overview?homepageId=76513285), which is also very useful. One particularly useful resource is their [introduction to HPC for new users](https://uiowa.atlassian.net/wiki/spaces/hpcdocs/pages/76513414/Introduction+To+HPC+For+New+Users). Their documentation goes into far more detail than we will here -- our goal is to provide a simplified tutorial to help new users get up and running with the most common types of statistics tasks.
 
-Biostatistics students who would like access to the cluster require a faculty sponsor. To request access, [apply for a Argon account](http://hpc.uiowa.edu/user-services/apply-account) and fill out the Argon access agreement with your information. Under "Investor Group", check the box for BIOSTAT.
+Biostatistics students who would like access to the cluster require a faculty sponsor. To request access, [apply for a Argon account](http://hpc.uiowa.edu/user-services/apply-account) and fill out the Argon access agreement with your information.
 
 The Argon cluster is heterogeneous, meaning that it consists of many different types of machines, and is continuously changing, so I can't offer exact numbers in terms of machines, processors, etc. In fact, parts of Argon are physically located in two different cities (Iowa City and Coralville). Here's a picture of what they look like:
 
